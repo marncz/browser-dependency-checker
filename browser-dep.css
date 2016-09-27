@@ -1,0 +1,15 @@
+#browse-dep-popup {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 50%;
+    height: 50%;
+    background-color:gray;
+    color: black;
+    opacity:1.0 !important;
+    text-align:center;
+    padding:5%;
+    font-family: Georgia, serif;
+}​
