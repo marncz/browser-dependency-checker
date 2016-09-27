@@ -27,6 +27,7 @@ List of web browse names:
 
 * Chrome
 * Mozilla 
+* MSIE 
 
 ### Redirect on fail
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "fail": "/failed" } );```
