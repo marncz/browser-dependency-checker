@@ -30,14 +30,36 @@ var browserDepCheck = function ( rules )
    	
 		var elem = document.getElementById('test');
 		var userAgent =  navigator.userAgent;
-		var array = userAgent.split(" ");
+		
+		if( window.MSStream ){
+			 var agentString = window.MSStream;
+			 console.log(agentString);
+		    var array = agentString.split(";");
+		   
+		} else {
+			 var agentString = userAgent;
+			 if(agentString.includes("MSIE")){
+			    var array = userAgent.split(';');
+			 } else {
+			    var array = userAgent.split(',');
+			 }
+		    
+		   
+		}
+	  console.log(array);
 
 		var failedDependencies = 0;
 			
 		for( var i = 0; i < array.length; i++ ){
-			var browser = array[i].split('/')[0];
-			var version = parseInt( array[i].split('/')[1] );
-
+			if(array[i].includes("MSIE")){
+				var string =  array[i].substring(array[i].indexOf("MSIE"));
+				var browser = string.split(' ')[0];
+				var version = parseInt(string.split(' ')[1]);
+			} else {
+				var browser = array[i].split('/')[0];
+				var version = parseInt( array[i].split('/')[1] );
+			}
+			alert(browser + " => " + version);
 			for (var key in rules) {
 
 			   if(browser.includes( key )){
