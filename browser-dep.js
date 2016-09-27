@@ -29,17 +29,16 @@ var browserDepCheck = function ( rules )
    window.onload = function(){
    	
 		var elem = document.getElementById('test');
-		var userAgent =  navigator.userAgent;
-		
+	
 		if( window.MSStream ){
 			 var agentString = window.MSStream;
 		    var array = agentString.split(";");
 		   
 		} else {
-			 var agentString = userAgent;
-			 
+		    var userAgent =  navigator.userAgent;
+		    
 			 // Just in case if userAgent returns MSIE
-			 if(agentString.includes("MSIE")){
+			 if(userAgent.includes("MSIE")){
 			    var array = userAgent.split(';');
 			 } else {
 			    var array = userAgent.split(',');
