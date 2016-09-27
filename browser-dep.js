@@ -21,8 +21,8 @@ var browserDepCheck = function ( rules )
     
       if( rules["debug"] ){
       	 if( rules["debug"] == 1 ){
-      	   	var debug = 1;
-          		delete rules["debug"];
+      	      var debug = 1;
+          	   delete rules["debug"];
       	 }
       }
 
@@ -45,11 +45,11 @@ var browserDepCheck = function ( rules )
 
 			   	if( version >= rules[key] ){
 			   		
-			   		if( debug == 1 ){	console.log("Browser requirements met: " + browser + " >= " + version ); }
+			   		if( debug == 1 ){ console.log("Browser requirements met: " + browser + " >= " + version ); }
 			   		
 			   	} else {
 			   		
-			   		if( debug == 1 ){	 console.log("Browser requirements not met: " + browser + " < " + version ); }
+			   		if( debug == 1 ){ console.log("Browser requirements not met: " + browser + " < " + version ); }
 			   		
 						failedDependencies++;
 					}	
@@ -63,23 +63,23 @@ var browserDepCheck = function ( rules )
 			// Failed dependency check, look for action on fail
 			
 			if( rules["fail"] ){
-   	  			var url = rules["fail"];
-        			delete rules["fail"];
+   	  		   var url = rules["fail"];
+        	      delete rules["fail"];
    		} else {
-   				var url = undefined;
+   		      var url = undefined;
    		}
 			
 			if( !url ){
-			   showPopup();
+			    showPopup();
 		   } else {
-				window.location.href = url;		
+				 window.location.href = url;		
 		   }
 				
 		}	else {
 				
 		// Passed dependency check, look for action on success
 		
-		if( rules["success"] ){
+	   if( rules["success"] ){
    	    var url = rules["success"];
           delete rules["success"];
    	} else {
@@ -87,13 +87,11 @@ var browserDepCheck = function ( rules )
    	}
 		
 		if( url ){
-			window.location.href = url;		
+		   window.location.href = url;		
 		}
 		
 		}	
 
-		
-		
 	};
    
 }
