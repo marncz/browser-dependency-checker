@@ -30,8 +30,15 @@ List of web browse names:
 * Firefox
 * MSIE 
 
+## Options
+There is only one argument: a list of all the options, they are all optional, you can combine them
+
 ### Redirect on fail
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "fail": "/failed" } );```
 
 ### Redirect on success
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "success": "/success" } );```
+
+### Debug mode
+````browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "debug": "1" } );```
+
