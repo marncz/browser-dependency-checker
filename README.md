@@ -1,3 +1,7 @@
+![](http://i.imgur.com/qdjbtJW.png)
+
+
+
 # What's that?
 
 This is a small pure Javascript function to check users' web browser version and either follow or redirect based on the
