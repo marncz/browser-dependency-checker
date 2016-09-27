@@ -6,10 +6,11 @@
     margin-left: -50px;
     width: 50%;
     height: 50%;
-    background-color:gray;
-    color: black;
+    background-color:#003E59;
+    color: white;
     opacity:1.0 !important;
     text-align:center;
     padding:5%;
     font-family: Georgia, serif;
+    border-radius:10px;
 }​

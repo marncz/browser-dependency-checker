@@ -1,4 +1,3 @@
-
 var showPopup = function ( )
 { 
 	document.documentElement.innerHTML += '\
