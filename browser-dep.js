@@ -3,7 +3,7 @@ var showPopup = function ( )
 	document.documentElement.innerHTML += '\
 	   <div id="browse-dep-popup"> \
 		<h1> Upss... </h1> \
-		Your web browser do not meet minimal requirements to view this website.<br> \
+		Your web browser does not meet minimal requirements to view this website.<br> \
 		Consider upgrading your current web browser or downloading one of the below web browsers in the latest version. \
 		<div style="margin-left:15%;position: absolute;bottom: 10%;"> \
 		<a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><img src="images/chrome.png" style="margin-left:10px;height:90px"></a> \
