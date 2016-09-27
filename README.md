@@ -25,8 +25,9 @@ Only include webdepcheck.js and webdepcheck.css files:
 
 List of web browse names:
 
+* Opera
 * Chrome
-* Mozilla 
+* Firefox
 * MSIE 
 
 ### Redirect on fail
