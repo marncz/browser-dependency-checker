@@ -35,3 +35,7 @@ List of web browse names:
 
 ### Redirect on success
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "success": "/success" } );```
+
+### Debug mode
+````browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "debug": "1" } );```
+
