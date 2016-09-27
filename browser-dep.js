@@ -22,12 +22,11 @@ var browserDepCheck = function ( rules )
       if( rules["debug"] ){
       	 if( rules["debug"] == 1 ){
       	      var debug = 1;
-          	   delete rules["debug"];
+              delete rules["debug"];
       	 }
       }
 
    window.onload = function(){
-   	
    	
 		var elem = document.getElementById('test');
 		var userAgent =  navigator.userAgent;
@@ -43,19 +42,19 @@ var browserDepCheck = function ( rules )
 
 			   if(browser.includes( key )){
 
-			   	if( version >= rules[key] ){
+			   if( version >= rules[key] ){
 			   		
-			   		if( debug == 1 ){ console.log("Browser requirements met: " + browser + " >= " + version ); }
+			  	 if( debug == 1 ){ console.log("Browser requirements met: " + browser + " >= " + version ); }
 			   		
-			   	} else {
+			   } else {
 			   		
-			   		if( debug == 1 ){ console.log("Browser requirements not met: " + browser + " < " + version ); }
+			   	if( debug == 1 ){ console.log("Browser requirements not met: " + browser + " < " + version ); }
 			   		
-						failedDependencies++;
-					}	
+				failedDependencies++;
+			   }	
 							   
 			   }
-			}
+		    }
 		}
 		
 		if( failedDependencies > 0 ){
@@ -64,33 +63,33 @@ var browserDepCheck = function ( rules )
 			
 			if( rules["fail"] ){
    	  		   var url = rules["fail"];
-        	      delete rules["fail"];
-   		} else {
-   		      var url = undefined;
-   		}
+        	           delete rules["fail"];
+   		        } else {
+   		          var url = undefined;
+   		        }
 			
 			if( !url ){
 			    showPopup();
-		   } else {
-				 window.location.href = url;		
-		   }
+		         } else {
+			    window.location.href = url;		
+		        }
 				
-		}	else {
+		      }	else {
 				
 		// Passed dependency check, look for action on success
 		
-	   if( rules["success"] ){
-   	    var url = rules["success"];
-          delete rules["success"];
-   	} else {
-   		 var url = undefined;
-   	}
+	        if( rules["success"] ){
+   	            var url = rules["success"];
+                    delete rules["success"];
+   	        } else {
+   		    var url = undefined;
+   	        }
 		
 		if( url ){
 		   window.location.href = url;		
 		}
 		
-		}	
+	        }	
 
 	};
    
