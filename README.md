@@ -5,10 +5,15 @@ version number.
 
 
 # Installation
-Only include webdepcheck.js and webdepcheck.css files, you can include remote files from git:
+Only include webdepcheck.js and webdepcheck.css files:
 
+## Local
     <script src="myscripts.js"></script>
     <link rel="stylesheet" type="text/css" href="theme.css">
+
+## Remote from GitHub
+    <script src="https://raw.githubusercontent.com/marncz/browser-dependency-checker/master/browser-dep.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/marncz/browser-dependency-checker/master/browser-dep.css">
 
 
 
