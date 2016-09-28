@@ -23,7 +23,25 @@ Only include webdepcheck.js and webdepcheck.css files:
 
 # Usage
 
-### Basic usage
+## Get minimal required version based on used CSS rules
+
+Without debug:
+
+```getMinBrowserVersion( "Chrome",0 );```
+
+With debug:
+
+```getMinBrowserVersion( "Chrome",1 );```
+
+Console output:
+
+```align-content may not work properly on Chrome < 21```
+
+```animation-name may not work properly on Chrome < 43```
+
+
+## Check if user has a web browser with high enough version
+
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5 } );```
 
 
@@ -33,6 +51,7 @@ List of web browse names:
 * Chrome
 * Firefox
 * MSIE 
+* Safari
 
 ## Options
 There is only one argument: a list of all the options, they are all optional, you can combine them
@@ -44,5 +63,5 @@ There is only one argument: a list of all the options, they are all optional, yo
 ```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "success": "/success" } );```
 
 ### Debug mode
-````browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "debug": "1" } );```
+```browserDepCheck ( { "Chrome" : 48, "Mozilla" : 5, "debug": "1" } );```
 
