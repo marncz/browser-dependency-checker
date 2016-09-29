@@ -11,7 +11,7 @@ version number.
 You can view a simple demo here: https://marncz.github.io/browser-dependency-checker/test.html
 
 # Installation
-Only include webdepcheck.js and webdepcheck.css files:
+It's easy! Only include browser-dep.js and browser-dep.js files:
 
 ## Local
     <script src="browser-dep.js"></script>
