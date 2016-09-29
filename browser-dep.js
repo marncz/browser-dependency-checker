@@ -188,11 +188,12 @@ var showPopup = function ()
       <h1> Upss... </h1> \
       Your web browser does not meet minimal requirements to view this website.<br> \
       Consider upgrading your current web browser or downloading one of the below web browsers in the latest version. \
-      <div style="margin-left:12%;position: absolute;bottom: 10%;"> \
+      <div style="margin-left:9%;position: absolute;bottom: 10%;"> \
       <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><img src="images/chrome.png" style="margin-left:10px;height:90px"></a> \
       <a href="https://www.mozilla.org/firefox/new/" target="_blank"><img src="images/firefox.png" style="margin-left:10px;height:90px"> </a>\
       <a href="http://www.opera.com/download" target="_blank"><img src="images/opera.png" style="margin-left:10px;height:90px"> </a>\
       <a href="https://www.microsoft.com/en-gb/download/internet-explorer.aspx" target="_blank"><img src="images/ie.png" style="margin-left:10px;height:90px"> </a>\
+      <a href="https://www.microsoft.com/en-gb/download/internet-explorer.aspx" target="_blank"><img src="images/safari.png" style="margin-left:10px;height:90px"> </a>\
       </div></div>';
 }
 
@@ -218,9 +219,7 @@ var browserDepCheck = function ( rules )
                   var fail_url = rules["fail"];
                   delete rules["fail"];
             } 
-              
-   window.onload = function(){
-   	
+
 
       if( window.MSStream ){
                var agentString = window.MSStream;
@@ -228,11 +227,12 @@ var browserDepCheck = function ( rules )
 		   
       } else {
           var userAgent =  navigator.userAgent;
-		    
+          console.log(userAgent);
           // Just in case if userAgent returns MSIE
           if(userAgent.includes("MSIE")){
                var array = userAgent.split(';');
           } else {
+          	   userAgent.replace(/ /g,'');
                var array = userAgent.split(',');
           }
 		  
@@ -240,16 +240,18 @@ var browserDepCheck = function ( rules )
 
 			
       for( var i = 0; i < array.length; i++ ){
-         if( array[i].includes("MSIE") ){
-            var string =  array[i].substring(array[i].indexOf("MSIE"));
-            var browser = string.split(' ')[0];
-            var version = parseInt(string.split(' ')[1]);
-         } else {
-            var browser = array[i].split('/')[0];
-            var version = parseInt( array[i].split('/')[1] );
+        for ( var key in rules ) {
+        	
+         var string =  array[i].substring(array[i].indexOf( key ));
+        	if( string.includes("MSIE") ){
+            	var browser = string.split(' ')[0];
+            	var version = parseInt(string.split(' ')[1]);
+         }  else {
+            	var browser = string.split('/')[0];
+               var version = parseInt( string.split('/')[1] );
          }
-			
-         for ( var key in rules ) {
+        
+         
 
             if( browser.includes( key ) ){
 
@@ -274,7 +276,7 @@ var browserDepCheck = function ( rules )
                }
 				
        }	else {
-				
+				if( debug == 1 ){ alert ("You have passed!"); }
             // Passed dependency check, look for action on success
             if( success_url ){
                window.location.href = success_url;		
@@ -282,7 +284,7 @@ var browserDepCheck = function ( rules )
 		
       }	
 
-   };
+
    
 }
 
