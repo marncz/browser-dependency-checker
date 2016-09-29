@@ -7,6 +7,8 @@
 This is a small pure Javascript function to check users' web browser version and either follow or redirect based on the
 version number. 
 
+# Demo
+You can view a simple demo here: https://marncz.github.io/browser-dependency-checker/test.html
 
 # Installation
 Only include webdepcheck.js and webdepcheck.css files:
