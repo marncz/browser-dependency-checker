@@ -23,6 +23,47 @@
     <section class="main-content">
 <h1> Test it out! </h1>
 
+<center>
+<table>
+<tr>
+<td>Google Chrome: </td>
+<td><input type="text" id="chrome" size="3" value="10"></td>
+<td><button onclick="alert('Google Chrome >=' + getMinBrowserVersion('Chrome'))">Check min. version</button></td>
+</tr>
+
+<tr>
+<td>Internet Explorer: </td>
+<td><input type="text" id="ie" size="3" value="10"></td>
+<td><button onclick="alert('Internet Explorer >=' + getMinBrowserVersion('MSIE'))">Check min. version</button></td>
+</tr>
+
+<tr>
+<td>Firefox: </td>
+<td><input type="text" id="firefox" size="3" value="10"></td>
+<td><button onclick="alert('Firefox >=' + getMinBrowserVersion('Firefox'))">Check min. version</button></td>
+</tr>
+
+<tr>
+<td>Safari: </td>
+<td><input type="text" id="safari" size="3" value="10"></td>
+<td><button onclick="alert('Safari >=' + getMinBrowserVersion('Safari'))">Check min. version</button></td>
+</tr>
+
+<tr>
+<td>Opera: </td>
+<td><input type="text" id="opera" size="3" value="10"></td>
+<td><button onclick="alert('Opera >=' + getMinBrowserVersion('Opera'))">Check min. version</button></td>
+</tr>
+
+
+</table>
+
+<br><br><br>
+<button id="check" style="float:left;" onclick="checkDep()">Check if you meet requirements</button>
+<a href="test.html"><button>Reset</button></a>
+</center>
+
+
 
 
 
@@ -43,11 +84,18 @@
 
 <script type="text/javascript" >
 
-var chromeMin = getMinBrowserVersion( "Chrome" ,1 );
+
+var checkDep = function () {
+var chrome = document.getElementById('chrome').value;
+var ie = document.getElementById('ie').value;
+var opera = document.getElementById('opera').value;
+var safari = document.getElementById('safari').value;
+var firefox = document.getElementById('firefox').value;
 
 
-browserDepCheck ( { "Chrome" : 123, } );
+browserDepCheck ( { "Chrome" : chrome , "MSIE" : ie, "Opera" : opera, "Safari" : safari, "Firefox" : firefox, "debug" : 1} );
 
+}
 </script>
 
 
