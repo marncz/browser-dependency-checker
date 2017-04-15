@@ -8,8 +8,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <script src="browser-dep.js"></script>
-    <link rel="stylesheet" type="text/css" href="browser-dep.css">
+    <script src="src/browser-dep.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/popup.css">
   </head>
   <body>
     <section class="page-header">
@@ -75,7 +75,7 @@
 
     </section>
 
-  
+
   </body>
 </html>
 
@@ -83,19 +83,14 @@
 
 
 <script type="text/javascript" >
-
-
 var checkDep = function () {
-var chrome = document.getElementById('chrome').value;
-var ie = document.getElementById('ie').value;
-var opera = document.getElementById('opera').value;
-var safari = document.getElementById('safari').value;
-var firefox = document.getElementById('firefox').value;
+  var chrome = document.getElementById('chrome').value;
+  var ie = document.getElementById('ie').value;
+  var opera = document.getElementById('opera').value;
+  var safari = document.getElementById('safari').value;
+  var firefox = document.getElementById('firefox').value;
 
-
-browserDepCheck ( { "Chrome" : chrome , "MSIE" : ie, "Opera" : opera, "Safari" : safari, "Firefox" : firefox, "debug" : 1} );
+  browserDepCheck ( { "Chrome" : chrome , "MSIE" : ie, "Opera" : opera, "Safari" : safari, "Firefox" : firefox, "debug" : 1} );
 
 }
 </script>
-
-
